@@ -1,7 +1,11 @@
 let n = 0;
-let c = 2;
-let rad = 6;
+let c = 1;
+let rad = 5;
 let ang = 137.5;
+
+let stepp = 159;
+let sat = 55;
+let hue = 130;
 
 function setup() {
   createCanvas(1000, 1000);
@@ -16,18 +20,23 @@ function draw() {
   let x = r * cos(a) + width / 2;
   let y = r * sin(a) + height / 2;
 
-  // let col = color((r * a) % 256, 175, 175)
-  let col = 255;
+  let col = color((hue%256), sat, 255)
+  // let col = 255;
 
   fill(col);
-  // strokeWeight(3)
-  noStroke();
+  strokeWeight(.5)
   ellipse(x, y, rad, rad);
 
-  if (n%150 === 0){
-    c += 0.25;
-    rad -= 0.25;
-    console.log("it happened")
+  if (n%stepp === 0){
+    c += 1;
+    rad += 3;
+    sat += 20;
+    hue += 8;
+    if (ang < 137.63){
+      ang += 0.012
+    }
+    
+    console.log("it happened", ang)
   }
 
   // if (n%10 === 0){
