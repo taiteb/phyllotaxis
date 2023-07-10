@@ -15,7 +15,7 @@ function setup() {
   angleMode(DEGREES);
   colorMode(HSB);
   pixelDensity(5);
-  background(5);
+  // background(5);
 
   for (let i = 0; i < colors.length; i++) {
     colors[i][0] = random(255);
